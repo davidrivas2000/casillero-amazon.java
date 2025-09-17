@@ -1,8 +1,9 @@
+
 import java.util.Scanner;
 
 public class EjecutarCasillero {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner Tc = new Scanner(System.in);
 
    
         Casillero[][] casilleros = new Casillero[3][3];
@@ -22,16 +23,16 @@ public class EjecutarCasillero {
             System.out.println("4. Mostrar estado general");
             System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
-            opcion = sc.nextInt();
-            sc.nextLine();
+            opcion = Tc.nextInt();
+            Tc.nextLine();
 
             switch (opcion) {
                 case 1:
                     System.out.print("Ingrese fila (0-2): ");
-                    int fila = sc.nextInt();
+                    int fila = Tc.nextInt();
                     System.out.print("Ingrese columna (0-2): ");
-                    int col = sc.nextInt();
-                    sc.nextLine();
+                    int col = Tc.nextInt();
+                    Tc.nextLine();
 
                     if (fila < 0 || fila >= casilleros.length || col < 0 || col >= casilleros[fila].length) {
                         System.out.println(" Posición inválida.");
@@ -43,9 +44,9 @@ public class EjecutarCasillero {
                         System.out.println(" Casillero ya ocupado.");
                     } else {
                         System.out.print("Ingrese destinatario: ");
-                        String destinatario = sc.nextLine();
+                        String destinatario = Tc.nextLine();
                         System.out.print("Ingrese fecha: ");
-                        String fecha = sc.nextLine();
+                        String fecha = Tc.nextLine();
                         c.asignarPaquete(destinatario, fecha);
                         System.out.println(" Paquete registrado en casillero [" + fila + "][" + col + "]");
                     }
@@ -74,6 +75,6 @@ public class EjecutarCasillero {
             }
         } while (opcion != 5);
 
-        sc.close();
+        Tc.close();
     }
 }
